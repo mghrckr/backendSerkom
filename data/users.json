@@ -1,0 +1,11 @@
+[
+    {
+        "nama_lengkap": "admin",
+        "email": "admin@mail.com",
+        "nomor_hp": 123456,
+        "password": "Admin123",
+        "tanggal_lahir": "1990-01-01T00:00:00.000Z",
+        "jenis_kelamin": "male",
+        "role": "admin"
+    }
+]

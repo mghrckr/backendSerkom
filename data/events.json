@@ -1,0 +1,17 @@
+[
+    {
+        "link_gambar": "/images/grup-1.jpg",
+        "judul": "Bidang Pembangkit Tenaga Listrik : BATCH 2",
+        "tanggal":"2024-01-01T00:00:00.000Z"
+    },
+    {
+        "link_gambar": "/images/grup-2.jpg",
+        "judul": "Bidang Pembangkit Tenaga Listrik : BATCH 1",
+        "tanggal": "2023-01-01T00:00:00.000Z"
+    },
+    {
+        "link_gambar": "/images/grup-3.jpg",
+        "judul": "Bidang Pembangkit Tenaga Listrik : BATCH 3",
+        "tanggal": "2022-01-01T00:00:00.000Z"
+    }
+]

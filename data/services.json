@@ -1,0 +1,72 @@
+[
+    {
+        "link_gambar": "/images/pembangunan-1.jpg",
+        "judul": "Bidang Pembangkit Tenaga Listrik :",
+        "deskripsi": "Pembangunan dan Pemasangan"
+    },
+    {
+        "link_gambar": "/images/pemeliharaan-1.jpg",
+        "judul": "Bidang Pembangkit Tenaga Listrik :",
+        "deskripsi": "Pemeliharaan"
+    },
+    {
+        "link_gambar": "/images/pengoperasian-1.jpg",
+        "judul": "Bidang Pembangkit Tenaga Listrik :",
+        "deskripsi": "Pengoperasian"
+    },
+    {
+        "link_gambar": "/images/pemeriksaan-1.jpg",
+        "judul": "Bidang Pembangkit Tenaga Listrik :",
+        "deskripsi": "Pemeriksaan dan Pengujian"
+    },
+    {
+        "link_gambar": "/images/pembangunan-2.jpg",
+        "judul": "Bidang Instalasi Pemanfaatan Tenaga Listrik:",
+        "deskripsi": "Pembangunan dan Pemasangan"
+    },
+    {
+        "link_gambar": "/images/pemeliharaan-2.jpg",
+        "judul": "Bidang Instalasi Pemanfaatan Tenaga Listrik:",
+        "deskripsi": "Pemeliharaan"
+    },
+    {
+        "link_gambar": "/images/pengoperasian-2.jpg",
+        "judul": "Bidang Instalasi Pemanfaatan Tenaga Listrik:",
+        "deskripsi": "Pengoperasian"
+    },
+    {
+        "link_gambar": "/images/pemeriksaan-2.jpg",
+        "judul": "Bidang Instalasi Pemanfaatan Tenaga Listrik:",
+        "deskripsi": "Pemeriksaan dan Pengujian"
+    },
+    {
+        "link_gambar": "/images/konsultansi-3.jpg",
+        "judul": "Bidang Instalasi Pemanfaatan Tenaga Listrik:",
+        "deskripsi": "Konsultansi"
+    },
+    {
+        "link_gambar": "/images/pembangunan-3.jpg",
+        "judul": "Bidang Distribusi Tenaga Listrik:",
+        "deskripsi": "Pembangunan dan Pemasangan"
+    },
+    {
+        "link_gambar": "/images/pemeliharaan-3.jpg",
+        "judul": "Bidang Distribusi Tenaga Listrik:",
+        "deskripsi": "Pemeliharaan"
+    },
+    {
+        "link_gambar": "/images/pengoperasian-3.jpg",
+        "judul": "Bidang Distribusi Tenaga Listrik:",
+        "deskripsi": "Pengoperasian"
+    },
+    {
+        "link_gambar": "/images/pemeriksaan-3.jpg",
+        "judul": "Bidang Distribusi Tenaga Listrik:",
+        "deskripsi": "Pemeriksaan dan Pengujian"
+    },
+    {
+        "link_gambar": "/images/konsultansi-2.jpg",
+        "judul": "Bidang Distribusi Tenaga Listrik:",
+        "deskripsi": "Konsultansi"
+    }
+]
