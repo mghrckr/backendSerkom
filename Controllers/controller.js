@@ -4,10 +4,48 @@ const path = require('path');
 const { User, Portfolio, TrainingEvent, ListPeserta, Service } = require('../models');
 const { checkPassword } = require('../helpers/bcrypt');
 const { signToken } = require('../helpers/jwt');
+const nodemailer = require('nodemailer');
+const bcrypt = require('bcryptjs');
 
 // require('dotenv').config();
 
 class Controller {
+    static async subscribe(req, res, next) {
+        try {
+            const { email } = req.body;
+
+            // Konfigurasi transporter untuk mengirim email menggunakan Gmail
+            let transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'mherucokro@gmail.com',
+                    pass: 'tvnzacasnavojdsp',
+                },
+            });
+
+            // Konten email
+            let mailOptions = {
+                from: 'mherucokro@gmail.com',
+                to: email,
+                subject: 'Subscribe Confirmation',
+                text: 'Terima kasih telah subscribe! Jangan lupa daftar akun untuk mengikuti sertifikasi dan mengetahui event terbaru.',
+                html: `
+                <p>Terima kasih telah subscribe!</p>
+                <p>Jangan lupa daftar akun untuk mengikuti sertifikasi dan mengetahui event terbaru.</p>
+                `,
+            };
+
+
+            // Kirim email
+            await transporter.sendMail(mailOptions);
+            console.log(`Email berhasil dikirim ke: ${email}`);
+            res.status(200).json({ message: 'Email berhasil dikirim!' });
+        } catch (error) {
+            console.error('Gagal mengirim email:', error);
+            res.status(500).json({ message: 'Gagal mengirim email.' });
+        }
+    }
+
     static async register(req, res, next) {
         try {
             const { nama_lengkap, email, nomor_hp, password, tanggal_lahir, jenis_kelamin, role } = req.body;
@@ -56,6 +94,25 @@ class Controller {
                 role,
                 id
             });
+        } catch (err) {
+            next(err);
+        }
+    }
+
+    static async forgetPassword(req, res, next) {
+        try {
+            const { email, newPassword } = req.body;
+
+            const user = await User.findOne({ where: { email } });
+            if (!user) {
+                return res.status(404).json({ message: 'User not found' });
+            }
+
+            const hashedPassword = await bcrypt.hash(newPassword, 10);
+            user.password = hashedPassword;
+            await user.save();
+
+            res.status(200).json({ message: 'Password reset successfully' });
         } catch (err) {
             next(err);
         }
@@ -164,17 +221,17 @@ class Controller {
     static async addListPeserta(req, res, next) {
         try {
             console.log(req.files, 'kocak'); // Tambahkan log ini untuk melihat struktur req.files
-    
+
             const { Jenjang, Bidang, SubBidang, batch } = req.body;
             const { userId: UserId, trainingEventId: TrainingEventId } = req.query;
-    
+
             const form_pp = req.files['form_pp'] ? `/uploads/${req.files['form_pp'][0].filename}` : null;
             const Ktp = req.files['Ktp'] ? `/uploads/${req.files['Ktp'][0].filename}` : null;
             const Ijazah = req.files['Ijazah'] ? `/uploads/${req.files['Ijazah'][0].filename}` : null;
             const pas_foto = req.files['pas_foto'] ? `/uploads/${req.files['pas_foto'][0].filename}` : null;
             const sk = req.files['sk'] ? `/uploads/${req.files['sk'][0].filename}` : null;
             const foto_kegiatan = req.files['foto_kegiatan'] ? `/uploads/${req.files['foto_kegiatan'][0].filename}` : null;
-    
+
             const newPeserta = await ListPeserta.create({
                 UserId,
                 TrainingEventId,
@@ -189,13 +246,13 @@ class Controller {
                 foto_kegiatan,
                 batch
             });
-    
+
             res.status(201).json(newPeserta);
         } catch (err) {
             next(err);
         }
     }
-    
+
 
 
     static async deleteListPeserta(req, res, next) {

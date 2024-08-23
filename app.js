@@ -28,8 +28,10 @@ app.use(express.json())
 app.use(urlencoded({ extended: true }))
 app.use(express.static('public'))
 
+app.post('/subscribe', Controller.subscribe);
 app.post('/register', Controller.register)
 app.post('/login', Controller.login)
+app.post('/forget', Controller.forgetPassword)
 app.get('/profile', authentication, Controller.getProfile)
 app.get('/users', authentication, Controller.getUsers)
 app.delete('/user/:id', Controller.deleteUserById)
