@@ -11,7 +11,7 @@ module.exports = {
      */
     await queryInterface.addColumn('ListPeserta', 'batch', {
       type: Sequelize.STRING,
-      allowNull: true,
+      allowNull: false,
     });
   },
 
