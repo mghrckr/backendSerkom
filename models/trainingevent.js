@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      TrainingEvent.hasMany(models.ListPeserta, { foreignKey: "TrainingEventId" })
+      TrainingEvent.hasMany(models.ListPeserta, { foreignKey: "TrainingEventId",  onDelete: 'CASCADE'  })
     }
   }
   TrainingEvent.init({

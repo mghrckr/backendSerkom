@@ -10,13 +10,16 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     return queryInterface.addColumn('ListPeserta', 'TrainingEventId', {
-      type: Sequelize.INTEGER, references: {
+      type: Sequelize.INTEGER,
+      allowNull: true,
+      references: {
         model: {
           tableName: 'TrainingEvents'
         },
-        key: "id"
-      }
-    })
+        key: 'id'
+      },
+      onDelete: 'CASCADE',  // Menambahkan opsi onDelete: 'CASCADE'
+    });
   },
 
   async down(queryInterface, Sequelize) {
